@@ -1,0 +1,49 @@
+{
+  "name": "blog",
+  "version": "0.0.0",
+  "private": true,
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  },
+  "scripts": {
+    "start": "npm run serve",
+    "build": "npm run build-ts",
+    "serve": "nodemon dist/bin/blog.js",
+    "watch-serve": "tsc && nodemon dist/bin/blog.js",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-serve\"",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "test": "jest --testEnvironment=node --verbose --detectOpenHandles  tests/*.test.ts"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "dotenv": "^8.2.0",
+    "elastic-builder": "^2.9.0",
+    "elasticsearch": "^16.7.1",
+    "express": "~4.16.1",
+    "jade": "^1.11.0",
+    "joi": "^14.3.1",
+    "joi-objectid": "^3.0.1",
+    "mongoosastic": "^4.6.0",
+    "mongoose": "^5.7.6",
+    "request-promise": "^4.2.4"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "jest": "^26.6.3",
+    "nodemon": "^1.19.4",
+    "supertest": "^6.1.3",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.9",
+    "@types/jest": "^26.0.23",
+    "ts-jest": "^26.5.6"
+  }
+}
