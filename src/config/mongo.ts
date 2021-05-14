@@ -13,16 +13,16 @@ mongoose.set("useFindAndModify", false); // use the MongoDB driver findOneAndUpd
 let connectionUrl = process.env.MONGO_URL || "127.0.0.1:27017"
 
 if (process.env.NODE_ENV === "test") {
-    mongoose.connect(`mongodb://${connectionUrl}/test-testDB`, { useNewUrlParser: true }, function (err) {
+    mongoose.connect(`mongodb://${connectionUrl}/blog-testDB`, { useNewUrlParser: true }, function (err) {
         if (err) return console.error(err);
         console.log('*****************');
-        console.log('connection successed to mongoDb >>> test-testDB');
+        console.log('connection successed to mongoDb >>> blog-testDB');
     });
 } else {
-    mongoose.connect(`mongodb://${connectionUrl}/test`, { useNewUrlParser: true }, function (err) {
+    mongoose.connect(`mongodb://${connectionUrl}/blog`, { useNewUrlParser: true }, function (err) {
         if (err) return console.error(err);
         console.log('*****************');
-        console.log('connection successed to mongoDb >>> test');
+        console.log('connection successed to mongoDb >>> blog');
     });
 }
 
