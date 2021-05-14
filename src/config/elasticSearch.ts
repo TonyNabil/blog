@@ -1,7 +1,7 @@
 import elasticsearch from "elasticsearch";
 
 export const config = {
-    host: "localhost",
+    host: process.env.ELASTICSEARCH_URL || "localhost",
     port: 9200
 }
 
