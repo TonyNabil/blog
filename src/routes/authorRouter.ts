@@ -4,8 +4,11 @@ import { addAuthorValidator, getAuthorByIdValidator } from "../validators/author
 
 const router = express.Router();
 
+//   POST /author
 router.post("/addAuthor", addAuthorValidator, authorController.addAuthor);
+//   GET /author
 router.get("/getAllAuthors", authorController.getAllAuthors);
+//   GET /author/:id
 router.get("/getAuthorById", getAuthorByIdValidator, authorController.getAuthorById);
 
 export default router;
