@@ -139,6 +139,7 @@ export default class Article {
     formatArticleResponse(article) {
 
         let formattedArticle = {
+            id: article._id,
             title: article.title,
             body: article.body,
             authorName: article.author.name,

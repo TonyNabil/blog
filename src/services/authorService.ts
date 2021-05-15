@@ -26,7 +26,7 @@ export default class Author {
     async getAllAuthors() {
 
 
-        const authors: any = await Authors.find({}).select('name job -_id')
+        const authors: any = await Authors.find({}).select('name job')
 
         if (!authors) {
             return []

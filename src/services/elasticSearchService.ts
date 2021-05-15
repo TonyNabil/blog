@@ -17,6 +17,7 @@ export default class ElasticSearch {
         for (const oneResult of searchResponse?.hits?.hits) {
 
             formatedResponse.push({
+                id: oneResult._id,
                 title: oneResult._source.title,
                 body: oneResult._source.body,
                 authorName: oneResult._source.author.name,
