@@ -1,5 +1,6 @@
 import { Response, Request } from "express";
 import ArticleService from "../services/articleService";
+import { handleErrors } from "../utils/utils"
 
 class ArticleController {
 
@@ -16,9 +17,7 @@ class ArticleController {
 
         } catch (error) {
             console.log(error);
-            const statusCode = error.statusCode ? error.statusCode : 500
-            const status = error.status ? error.status : "SERVER_ERROR"
-            const message = error.message ? error.message : "Internal Server Error!"
+            const { statusCode, status, message } = handleErrors(error)
             return res.status(statusCode).json({
                 status: status,
                 message: message
@@ -33,9 +32,7 @@ class ArticleController {
 
         } catch (error) {
             console.log(error);
-            const statusCode = error.statusCode ? error.statusCode : 500
-            const status = error.status ? error.status : "SERVER_ERROR"
-            const message = error.message ? error.message : "Internal Server Error!"
+            const { statusCode, status, message } = handleErrors(error)
             return res.status(statusCode).json({
                 status: status,
                 message: message
@@ -51,9 +48,7 @@ class ArticleController {
 
         } catch (error) {
             console.log(error);
-            const statusCode = error.statusCode ? error.statusCode : 500
-            const status = error.status ? error.status : "SERVER_ERROR"
-            const message = error.message ? error.message : "Internal Server Error!"
+            const { statusCode, status, message } = handleErrors(error)
             return res.status(statusCode).json({
                 status: status,
                 message: message
@@ -72,9 +67,7 @@ class ArticleController {
 
         } catch (error) {
             console.log(error);
-            const statusCode = error.statusCode ? error.statusCode : 500
-            const status = error.status ? error.status : "SERVER_ERROR"
-            const message = error.message ? error.message : "Internal Server Error!"
+            const { statusCode, status, message } = handleErrors(error)
             return res.status(statusCode).json({
                 status: status,
                 message: message
@@ -90,9 +83,7 @@ class ArticleController {
 
         } catch (error) {
             console.log(error);
-            const statusCode = error.statusCode ? error.statusCode : 500
-            const status = error.status ? error.status : "SERVER_ERROR"
-            const message = error.message ? error.message : "Internal Server Error!"
+            const { statusCode, status, message } = handleErrors(error)
             return res.status(statusCode).json({
                 status: status,
                 message: message
@@ -108,9 +99,7 @@ class ArticleController {
 
         } catch (error) {
             console.log(error);
-            const statusCode = error.statusCode ? error.statusCode : 500
-            const status = error.status ? error.status : "SERVER_ERROR"
-            const message = error.message ? error.message : "Internal Server Error!"
+            const { statusCode, status, message } = handleErrors(error)
             return res.status(statusCode).json({
                 status: status,
                 message: message

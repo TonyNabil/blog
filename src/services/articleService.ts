@@ -1,4 +1,3 @@
-import article from "../models/article";
 import Articles from "../models/article";
 import Authors from "../models/author";
 

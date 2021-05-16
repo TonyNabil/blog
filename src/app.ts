@@ -1,5 +1,4 @@
-import createError, { HttpError } from "http-errors";
-import express, { Response, Request, NextFunction } from "express";
+import express from "express";
 import path from "path";
 import "./config/mongo";
 require("dotenv").config({ path: path.join(__dirname, "..", ".env") });
